@@ -4,6 +4,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  padding-top: 60px;
   background: linear-gradient(0.2turn, #715597, #ccb6ea, #715597);
   color: white;
 }
@@ -21,15 +22,19 @@ body {
 
 section {
   padding: 20px;
-  margin: 20px auto;
-  max-width: 800px;
+  display: flex;
+  flex-direction: column; /* Change to column layout */
+  align-items: center; /* Center items horizontally */
+  max-width: calc(100vw - 40px);
+  scroll-margin-top: 60px;
+  margin: 0 auto; /* Center the section itself */
 }
 
 footer {
   text-align: center;
   background: #1f0936;
   color: #fff;
-  padding: 10px 0;
+  padding: 10px;
   position: relative;
   width: 100%;
   margin-top: 20px;
@@ -39,13 +44,14 @@ footer {
 header {
   background: #1f0936;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -55,7 +61,6 @@ header h1 {
   font-family: 'Poppins', sans-serif;
 }
 
-/*navigation links*/
 .nav-links {
   list-style: none;
   display: flex;
@@ -125,6 +130,8 @@ header h1 {
   overflow-x: auto;
   gap: 15px;
   padding: 10px 0;
+  justify-content: center;
+  
 }
 
 .project-box {
@@ -134,19 +141,24 @@ header h1 {
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center content inside project boxes */
+
 }
 
 .project-image{
   width: 300px
 }
 
-/*about section styling*/
+
 .about-section {
   background: #52367e;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  max-width: 800px;
+  scroll-margin-top: 60px;
 }
 
 .about-container {
@@ -182,6 +194,7 @@ header h1 {
   gap: 15px;
   padding: 10px 0;
   scroll-behavior: smooth;
+  justify-content: center;
 }
 
 .event-box {
