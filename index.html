@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sydney Pacheco - Professional Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-
-
     <div id="header">
       <header>
         <h1>Sydney Pacheco</h1>
@@ -26,21 +27,39 @@
 
     <div id="about" class="about-section">
       <div class="about-container">
-        <img src="images/profilepic.jpg" alt="Sydney Pacheco" class="about-image"/>
+        <img
+          src="images/profilepic.jpg"
+          alt="Sydney Pacheco"
+          class="about-image"
+        />
         <div class="about-text">
-          <h2>About Me:</h2>
+          <h3>
+            Junior full-stack developer with an interest in data analytics.
+          </h3>
           <p>
-            I am a senior computer science student at Rutgers University - New Brunswick.
-            I am familiar with Python, basic OOP in Java, SQL, Github, and some datascience libraries (Numpy, Seaborn, Pandas, Matplotlib, Beautiful Soup, Scikit-learn).
-            I enjoy using my statistical and technical knowledge to find interesting patterns in data and build ML applications.
-            For fun, I also like to create websites using HTML, CSS, and Javascript and games using Unity and Java.
+            B.S. in Computer Science from Rutgers University - New Brunswick.
+            Can design and build modular and secure CRUD website APIs and user
+            interfaces using <span style="font-weight: bold">MERN stack</span>.
+            I enjoy using my statistical and technical knowledge to find
+            interesting patterns in data and build
+            <span style="font-weight: bold">ML applications</span> in Python. I
+            am also familiar with OOP in Java.
           </p>
           <p>
             Let's connect!
             <a
-              href="https://www.linkedin.com/in/sydneypacheco/" target="_blank" class="external-link">LinkedIn</a>
+              href="https://www.linkedin.com/in/sydneypacheco/"
+              target="_blank"
+              class="external-link"
+              >LinkedIn</a
+            >
             |
-            <a href="https://github.com/sgpacheco5" target="_blank" class="external-link">GitHub</a>
+            <a
+              href="https://github.com/sgpacheco5"
+              target="_blank"
+              class="external-link"
+              >GitHub</a
+            >
           </p>
         </div>
       </div>
@@ -49,43 +68,102 @@
     <section id="projects">
       <h2 class="text_on_background">Projects</h2>
       <div class="project-container">
-          <div class="project-box">
-            <h3>Cooking Simulator</h3>
-            <img
+        <div class="project-box">
+          <h3>Art E-commerce Webapp</h3>
+          <img
+            src="images/art_ecommerce.JPG"
+            alt="Art Ecommerce Webapp Image"
+            class="project-image"
+          />
+          <p>
+            Used MERN stack to create a web API with MongoDB, Node.js,
+            Express.js and Cloudinary/Multer. Frontend uses React.js and
+            Tailwindcss for styling. Used Stripe for payment and Render for
+            deployment.
+          </p>
+
+          <a
+            href="https://art-ecommerce-demo-backend.onrender.com/"
+            target="_blank"
+            class="external-link"
+            >Live Website</a
+          >
+          <br />
+          <a
+            href="https://art-ecommerce-demo-backend.onrender.com/"
+            target="_blank"
+            class="external-link"
+            >Video Demo</a
+          >
+          <a
+            href="https://github.com/sgpacheco5/ArtEcommerce"
+            target="_blank"
+            class="external-link"
+            >Repository</a
+          >
+        </div>
+        <div class="project-box">
+          <h3>Cooking Simulator</h3>
+          <img
             src="images/cooksim.JPG"
             alt="Pomodoro Image"
             class="project-image"
           />
-            <p>
-              Built in Unity Game Engine with C# scripts. UI images were handmade using Piksel. (collaborative project with @Madjac33)
-            </p>
-            <a href="https://github.com/Madjac33/comfort-food" target="_blank" class="external-link">"Comfort Food" Repository</a>
-          </div>
-          <div class="project-box">
-          <h3>Betris (Tetris Clone)</h3>
-          <img src="images/betris.JPG" alt="Betris Image" class="project-image"/><br/>
           <p>
-            Created a simple tetris clone in JSE-17. Sources used for this project are credited in sources.txt in project folder.
+            Built in Unity Game Engine with C# scripts. UI images were handmade
+            using Piksel. (collaborative project with @Madjac33)
           </p>
-          <a href="https://github.com/sgpacheco5/Betris" target="_blank" class="external-link">Repository</a><br>
-          <a href="images/betris.jar" download="betris.jar" style="color:aqua">Download to Play!</a>
-          </div>
-          <div class="project-box">
-            <h3>Flight Reservation System</h3>
-            <img
+          <a
+            href="https://github.com/Madjac33/comfort-food"
+            target="_blank"
+            class="external-link"
+            >"Comfort Food" Repository</a
+          >
+        </div>
+        <div class="project-box">
+          <h3>Betris (Tetris Clone)</h3>
+          <img
+            src="images/betris.JPG"
+            alt="Betris Image"
+            class="project-image"
+          /><br />
+          <p>
+            Created a simple tetris clone in JSE-17. Sources used for this
+            project are credited in sources.txt in project folder.
+          </p>
+          <a
+            href="https://github.com/sgpacheco5/Betris"
+            target="_blank"
+            class="external-link"
+            >Repository</a
+          ><br />
+          <a href="images/betris.jar" download="betris.jar" style="color: aqua"
+            >Download to Play!</a
+          >
+        </div>
+        <div class="project-box">
+          <h3>Flight Reservation System</h3>
+          <img
             src="images/flightsystemloginpage.JPG"
             alt="Flight System Image"
             class="project-image"
           />
-            <p>
-              Designed and implemented a relational database system in MySQL. Created a user-friendly website to query and update database information with JSP hosted locally on Apache Tomcat 8. (Collaborative project with @crrlyly and @hilonipatel).
-            </p>
-          <a href="https://github.com/crrlyly/FlightSystem" target="_blank" class="external-link">Flight System Repository</a>
-            </div>
-          <!-- Add more projects here :) -->
+          <p>
+            Designed and implemented a relational database system in MySQL.
+            Created a user-friendly website to query and update database
+            information with JSP hosted locally on Apache Tomcat 8.
+            (Collaborative project with @crrlyly and @hilonipatel).
+          </p>
+          <a
+            href="https://github.com/crrlyly/FlightSystem"
+            target="_blank"
+            class="external-link"
+            >Flight System Repository</a
+          >
+        </div>
+        <!-- Add more projects here :) -->
       </div>
     </section>
-
 
     <section id="events">
       <h2 class="text_on_background">Fun Events I've Attended</h2>
@@ -95,27 +173,33 @@
           <p><strong>Date:</strong> February 22-23rd, 2025</p>
           <p><strong>Location:</strong> The College of New Jersey</p>
           <p>
-            <strong>Description:</strong> A 24-hour hackathon where my friend and I developed and demoed a Cooking Simulation Game Prototype in Unity Game Engine.
+            <strong>Description:</strong> A 24-hour hackathon where my friend
+            and I developed and demoed a Cooking Simulation Game Prototype in
+            Unity Game Engine.
           </p>
-          <a href="https://devpost.com/software/comfort-food" target="_blank" class="external-link">Link to Devpost Demo</a>
+          <a
+            href="https://devpost.com/software/comfort-food"
+            target="_blank"
+            class="external-link"
+            >Link to Devpost Demo</a
+          >
         </div>
         <div class="event-box">
           <h3>
-            Student Presentations affiliated with Brookdale STEM Internships by New
-            Jersey Space Grant Consortium
+            Student Presentations affiliated with Brookdale STEM Internships by
+            New Jersey Space Grant Consortium
           </h3>
           <p><strong>Date:</strong> Spring 2022</p>
           <p><strong>Location:</strong> Brookdale Community College</p>
           <p>
             <strong>Description:</strong> Presented my research results from a
-            statistical analysis of the correlation between the sleep quality and
-            academic performance of Brookdale Students.
+            statistical analysis of the correlation between the sleep quality
+            and academic performance of Brookdale Students.
           </p>
         </div>
         <!-- Add more events here :) -->
       </div>
     </section>
-
 
     <section id="contact" class="text_on_background">
       <h2>Contact Me</h2>
