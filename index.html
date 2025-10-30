@@ -1,211 +1,668 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sydney Pacheco - Professional Portfolio</title>
+    <title>Sydney Pacheco - Developer Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/images/portfolio_favicon.PNG">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div id="header">
-      <header>
-        <h1>Sydney Pacheco</h1>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+  <body data-theme="light">
+    <div class="container">
+      <!-- Left Sidebar -->
+      <aside class="sidebar-left">
+        <!-- LinkedIn -->
+        <button class="icon-button" id="linkedinBtn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"
+            />
+          </svg>
+        </button>
+
+        <!-- GitHub -->
+        <button class="icon-button" id="githubBtn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+            />
+          </svg>
+        </button>
+
+        <!-- Theme toggle -->
+        <button class="icon-button" id="themeToggle" aria-label="Toggle theme">
+          <svg
+            id="sunIcon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg
+            id="moonIcon"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            style="display: none"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+
+        <!-- Music toggle -->
+        <button class="icon-button" id="musicToggle" aria-label="Toggle music">
+          <svg
+            id="musicOnIcon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            style="display: none"
+          >
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+          </svg>
+          <svg
+            id="musicOffIcon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+            <line x1="2" y1="2" x2="22" y2="22" />
+          </svg>
+        </button>
+
+        <!-- Hidden background music -->
+        <audio id="bgMusic" loop>
+          <source src="assets/music/coconut-mall.mp3" type="audio/mpeg" />
+        </audio>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Navbar -->
+        <nav class="navbar">
+          <div class="navbar-left">
+            <div class="logo">SP</div>
+            <a href="mailto:sgpacheco5@gmail.com" class="email"
+              >sgpacheco5@gmail.com</a
+            >
+            <a href="#resume" class="resume-link">Resume</a>
+          </div>
+          <div class="navbar-right">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+          <button class="hamburger" id="hamburgerMenu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="mobile-menu" id="mobileMenu">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#experience" class="mobile-nav-link">Experience</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+          </div>
         </nav>
-      </header>
+
+        <!-- Hero Section -->
+        <section class="hero animate-in">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>Sydney Pacheco</h1>
+              <div class="hero-info">
+                <div class="info-item">
+                  <svg
+                    class="info-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>NJ, USA</span>
+                </div>
+                <span class="info-separator">•</span>
+                <div class="info-item">
+                  <svg
+                    class="info-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                  <span>B.S. Computer Science - Rutgers New Brunswick</span>
+                </div>
+              </div>
+              <p>
+                Junior
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >full-stack developer</span
+                >
+                with an interest in
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >data analytics</span
+                >. Specializing in React, Node.js, and Python with a passion for
+                automating processes and creating impactful user products.
+              </p>
+            </div>
+            <div class="hero-image-container">
+              <img
+                src="assets/images/profile.jpg"
+                alt="Sydney Pacheco"
+                class="hero-image"
+              />
+              <a href="#projects" class="hero-cta">View Projects</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+          <h2 class="section-title">More about me...</h2>
+          <div class="card about-card">
+            <!-- Left side: About text -->
+            <div class="about-text">
+              <p>
+                I have a strong foundation in
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >full-stack web development, data science, and software
+                  engineering</span
+                >.
+              </p>
+              <p>
+                I recently earned my
+                <span style="color: var(--tertiary-700); font-weight: 600"
+                  >Bachelor of Science in Computer Science</span
+                >
+                from Rutgers University (September 2023 - August 2025) and an
+                Associate of Arts in Computer Science from Brookdale Community
+                College (September 2021 - August 2023).
+              </p>
+              <p style="margin-top: var(--space-3)">
+                My passion lies in completing
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >end-to-end products</span
+                >, from initial
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >database design</span
+                >
+                and
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >API construction</span
+                >
+                to creating
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >secure user flows</span
+                >
+                and delivering a clean,
+                <span style="color: var(--secondary-500); font-weight: 600"
+                  >responsive UI</span
+                >.
+              </p>
+            </div>
+
+            <!-- Right side: Skills -->
+            <div class="skills-card">
+              <h6
+                style="margin-bottom: var(--space-2); color: var(--neutral-600)"
+              >
+                Skills & Technologies:
+              </h6>
+
+              <div class="skills-category">
+                <div class="skills-grid">
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"
+                      />
+                    </svg>
+                    <span>React</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"
+                      />
+                    </svg>
+                    <span>Tailwind CSS</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"
+                      />
+                    </svg>
+                    <span>HTML/CSS</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"
+                      />
+                    </svg>
+                    <span>JavaScript</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.6.065-.037.151-.023.218.017l2.256 1.339c.082.045.197.045.272 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.192-.137-.242l-8.791-5.072c-.081-.047-.189-.047-.271 0L3.075 6.68c-.085.05-.139.146-.139.241v10.154c0 .097.054.189.139.235l2.409 1.392c1.307.654 2.108-.116 2.108-.89V7.787c0-.142.114-.253.256-.253h1.115c.139 0 .255.112.255.253v10.021c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L2.28 18.675c-.57-.329-.922-.946-.922-1.604V6.921c0-.658.353-1.274.922-1.603l8.795-5.082c.557-.315 1.296-.315 1.848 0l8.794 5.082c.57.329.924.945.924 1.603v10.15c0 .659-.354 1.276-.924 1.604l-8.794 5.078c-.28.163-.599.247-.925.247zm2.72-6.991c-3.849 0-4.657-1.766-4.657-3.248 0-.144.115-.257.256-.257h1.137c.127 0 .233.092.252.216.171 1.154.682 1.736 3.013 1.736 1.852 0 2.639-.42 2.639-1.403 0-.567-.224-.988-3.105-1.271-2.406-.236-3.895-.768-3.895-2.683 0-1.768 1.491-2.821 3.988-2.821 2.806 0 4.193.974 4.369 3.064.006.074-.019.145-.063.199-.044.053-.107.084-.176.084h-1.143c-.118 0-.221-.084-.245-.199-.272-1.206-.933-1.591-2.742-1.591-2.019 0-2.254.704-2.254 1.23 0 .641.277.828 3.009 1.191 2.707.359 3.991.864 3.991 2.741 0 1.901-1.586 3.009-4.354 3.009z"
+                      />
+                    </svg>
+                    <span>Node.js</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9a22.7 22.7 0 0 1-2.4-.36c-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9c-.6 0-1.17 0-1.71.03-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03.6 0 1.17 0 1.71-.03.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.40-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.40.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68s-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68s1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26 0-.73-1.18-1.63-3.28-2.26-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26 0 .73 1.18 1.63 3.28 2.26.25-.76.55-1.51.89-2.26m9.45 4.88l.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51-.6 1.04m2.95-9.76l-.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51.6-1.04M13.71 5.03l-.38-.66c-.19.06-.38.14-.56.2-.27.09-.53.19-.78.3l.14.25c.49-.32 1-.58 1.58-.09M6.92 19.82l.38.66c.19-.06.38-.14.56-.2.27-.09.53-.19.78-.3l-.14-.25c-.49.32-1 .58-1.58.09"
+                      />
+                    </svg>
+                    <span>Express</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm-9.738 0a2.236 2.236 0 0 1-2.236 2.236 2.237 2.237 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.237 2.236zm19.516 0a2.236 2.236 0 0 1-2.236 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.236-2.236 2.236 2.236 0 0 1 2.236 2.236z"
+                      />
+                    </svg>
+                    <span>REST APIs</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"
+                      />
+                    </svg>
+                    <span>Git</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"
+                      />
+                    </svg>
+                    <span>MongoDB</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M10.945 23.689c.313.03.615-.05.845-.245.23-.195.348-.473.348-.76V17.88c0-.287-.118-.565-.348-.76-.23-.195-.532-.275-.845-.245-1.266.121-2.398.55-3.366 1.275-.967.725-1.602 1.68-1.887 2.84-.285 1.16-.127 2.347.471 3.53.597 1.183 1.58 2.078 2.923 2.66 1.343.582 2.82.688 4.386.314"
+                      />
+                    </svg>
+                    <span>Redis</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M13.5 0L10 1.5 11.5 5l-3.5 1L10 9.5 8 10l2 3.5L8.5 15l3.5-1.5L13.5 17l2-3.5 3.5 1.5-1.5-3.5L21 10l-2-1.5L20.5 5l-3.5 1L15.5 2.5 13.5 0zM12 8a4 4 0 110 8 4 4 0 010-8z"
+                      />
+                    </svg>
+                    <span>Python</span>
+                  </div>
+                  <div class="skill-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"
+                      />
+                    </svg>
+                    <span>Postman</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+          <h2 class="section-title">Featured Projects</h2>
+
+          <!-- Project 1 -->
+<div class="card">
+  <h3>Art E-commerce Webapp</h3>
+  
+  <div class="project-text">
+    <div class="project-links">
+      <a
+        href="https://art-ecommerce-demo-backend.onrender.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-link"
+      >
+        Live Site
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          ></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <a
+        href="https://github.com/sgpacheco5/ArtEcommerce"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-link"
+      >
+        View Repo
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          ></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
     </div>
 
-    <div id="about" class="about-section">
-      <div class="about-container">
-        <img
-          src="images/profilepic.jpg"
-          alt="Sydney Pacheco"
-          class="about-image"
-        />
-        <div class="about-text">
-          <h3>
-            Junior full-stack developer with an interest in data analytics.
-          </h3>
-          <p>
-            B.S. in Computer Science from Rutgers University - New Brunswick.
-            Can design and build modular and secure CRUD website APIs and user
-            interfaces using <span style="font-weight: bold">MERN stack</span>.
-            I enjoy using my statistical and technical knowledge to find
-            interesting patterns in data and build
-            <span style="font-weight: bold">ML applications</span> in Python. I
-            am also familiar with OOP in Java.
-          </p>
-          <p>
-            Let's connect!
-            <a
-              href="https://www.linkedin.com/in/sydneypacheco/"
-              target="_blank"
-              class="external-link"
-              >LinkedIn</a
+    <p>
+      A full-stack art e-commerce website for a single artist to showcase and sell their artwork online.
+      The platform supports both guest and registered user checkout, with protected admin routes.
+      API follows a RESTful architecture.
+    </p>
+
+    <div class="tags">
+      <span class="tag">REACT</span>
+      <span class="tag">TAILWINDCSS</span>
+      <span class="tag">FRAMER MOTION</span>
+      <span class="tag">ZUSTAND</span>
+      <span class="tag">NODE.JS</span>
+      <span class="tag">JWT</span>
+      <span class="tag">REDIS</span>
+      <span class="tag">MONGODB</span>
+      <span class="tag">MULTER</span>
+    </div>
+
+    <div class="video-demo">
+      <iframe
+        src="https://www.youtube.com/embed/CjGngWXhBxM"
+        title="Art E-commerce Webapp Demo"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+        <!-- Project 2 -->
+<div class="card">
+  <h3>Flight Reservation System</h3>
+  
+  <div class="project-text">
+    <div class="project-links">
+      <a
+        href="https://github.com/sgpacheco5/FlightReservationSystem"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-link"
+      >
+        View Repo
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          ></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
+
+    <p>
+      Collaboratively developed a fully functional Flight System using HTML
+      for the front end and Java Servlets with Apache Tomcat and JDBC for the
+      backend. We used a MySQL relational database to manage the data and
+      implemented distinct functionalities for Customers, Customer
+      Representatives, and Administrators.
+    </p>
+
+                <div class="tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">Apache Tomcat 8</span>
+                </div>
+  </div>
+</div>
+          <!-- Project 3 -->
+<div class="card">
+  <h3>Betris - Tetris Clone</h3>
+  
+  <div class="project-text">
+    <div class="project-links">
+      <a
+        href="https://github.com/sgpacheco5/Betris"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-link"
+      >
+        View Repo
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          ></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+      <a
+        href="assets/betris-download/betris.jar"
+        rel="noopener noreferrer"
+        class="project-link"
+      >
+        Download betris.jar to play
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          ></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
+
+    <p>
+      Created a simple tetris clone in JSE-17 to practice OOP,
+                  following a tutorial and editing key features to make it
+                  unique. Sources used for this project are credited in
+                  sources.txt in project folder.
+    </p>
+
+                <div class="tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Java Swing</span>
+                  <span class="tag">Java AWT</span>
+                </div>
+  </div>
+</div>
+<!-- end here -->
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+          <h2 class="section-title">Experience</h2>
+
+          <div class="card">
+            <h3>HackTCNJ 2025</h3>
+            <p
+              style="color: var(--text-tertiary); margin-bottom: var(--space-2)"
             >
-            |
+              February 2025 • 24-hour Hackathon
+            </p>
+            <p>
+              My friend and I used paired programming to develop and demo a
+              Cooking Simulation Game Prototype in Unity Game Engine and placed
+              top-five in the overall competition.
+            </p>
+            <br />
             <a
-              href="https://github.com/sgpacheco5"
+              href="https://devpost.com/software/comfort-food"
               target="_blank"
-              class="external-link"
-              >GitHub</a
+              rel="noopener noreferrer"
+              class="project-link"
             >
+              Devpost Demo
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/Madjac33/comfort-food"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              Github Repo
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+  <h2 class="section-title">Get In Touch</h2>
+  <div class="card">
+    <form id="contactForm" class="contact-form">
+      <div class="contact-form-fields">
+        <!-- LEFT COLUMN -->
+        <div class="contact-left">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="contact-right">
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+          <div id="formStatus" class="form-status"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Resume</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <iframe class="resume-viewer" src="/assets/resume/Sydney-Pacheco-Resume.pdf" title="Sydney Pacheco Resume"></iframe>
+
+          <p
+            style="
+              text-align: center;
+              color: var(--text-secondary);
+              margin-top: var(--space-2);
+            "
+          >
+            If the resume doesn't display, please download it using the button
+            below.
           </p>
+        </div>
+        <div class="modal-footer">
+          <button id="downloadResume" class="download-btn">
+            Download Resume
+          </button>
         </div>
       </div>
     </div>
-
-    <section id="projects">
-      <h2 class="text_on_background">Projects</h2>
-      <div class="project-container">
-        <div class="project-box">
-          <h3>Art E-commerce Webapp</h3>
-          <img
-            src="images/art_ecommerce.JPG"
-            alt="Art Ecommerce Webapp Image"
-            class="project-image"
-          />
-          <p>
-            Used MERN stack to create a web API with MongoDB, Node.js,
-            Express.js and Cloudinary/Multer. Frontend uses React.js and
-            Tailwindcss for styling. Used Stripe for payment and Render for
-            deployment.
-          </p>
-
-          <a
-            href="https://art-ecommerce-demo-backend.onrender.com/"
-            target="_blank"
-            class="external-link"
-            >Live Website</a
-          >
-          <br />
-          <a
-            href="https://art-ecommerce-demo-backend.onrender.com/"
-            target="_blank"
-            class="external-link"
-            >Video Demo</a
-          >
-          <a
-            href="https://github.com/sgpacheco5/ArtEcommerce"
-            target="_blank"
-            class="external-link"
-            >Repository</a
-          >
-        </div>
-        <div class="project-box">
-          <h3>Cooking Simulator</h3>
-          <img
-            src="images/cooksim.JPG"
-            alt="Pomodoro Image"
-            class="project-image"
-          />
-          <p>
-            Built in Unity Game Engine with C# scripts. UI images were handmade
-            using Piksel. (collaborative project with @Madjac33)
-          </p>
-          <a
-            href="https://github.com/Madjac33/comfort-food"
-            target="_blank"
-            class="external-link"
-            >"Comfort Food" Repository</a
-          >
-        </div>
-        <div class="project-box">
-          <h3>Betris (Tetris Clone)</h3>
-          <img
-            src="images/betris.JPG"
-            alt="Betris Image"
-            class="project-image"
-          /><br />
-          <p>
-            Created a simple tetris clone in JSE-17. Sources used for this
-            project are credited in sources.txt in project folder.
-          </p>
-          <a
-            href="https://github.com/sgpacheco5/Betris"
-            target="_blank"
-            class="external-link"
-            >Repository</a
-          ><br />
-          <a href="images/betris.jar" download="betris.jar" style="color: aqua"
-            >Download to Play!</a
-          >
-        </div>
-        <div class="project-box">
-          <h3>Flight Reservation System</h3>
-          <img
-            src="images/flightsystemloginpage.JPG"
-            alt="Flight System Image"
-            class="project-image"
-          />
-          <p>
-            Designed and implemented a relational database system in MySQL.
-            Created a user-friendly website to query and update database
-            information with JSP hosted locally on Apache Tomcat 8.
-            (Collaborative project with @crrlyly and @hilonipatel).
-          </p>
-          <a
-            href="https://github.com/crrlyly/FlightSystem"
-            target="_blank"
-            class="external-link"
-            >Flight System Repository</a
-          >
-        </div>
-        <!-- Add more projects here :) -->
-      </div>
-    </section>
-
-    <section id="events">
-      <h2 class="text_on_background">Fun Events I've Attended</h2>
-      <div class="event-container">
-        <div class="event-box">
-          <h3>Hack TCNJ 2025</h3>
-          <p><strong>Date:</strong> February 22-23rd, 2025</p>
-          <p><strong>Location:</strong> The College of New Jersey</p>
-          <p>
-            <strong>Description:</strong> A 24-hour hackathon where my friend
-            and I developed and demoed a Cooking Simulation Game Prototype in
-            Unity Game Engine.
-          </p>
-          <a
-            href="https://devpost.com/software/comfort-food"
-            target="_blank"
-            class="external-link"
-            >Link to Devpost Demo</a
-          >
-        </div>
-        <div class="event-box">
-          <h3>
-            Student Presentations affiliated with Brookdale STEM Internships by
-            New Jersey Space Grant Consortium
-          </h3>
-          <p><strong>Date:</strong> Spring 2022</p>
-          <p><strong>Location:</strong> Brookdale Community College</p>
-          <p>
-            <strong>Description:</strong> Presented my research results from a
-            statistical analysis of the correlation between the sleep quality
-            and academic performance of Brookdale Students.
-          </p>
-        </div>
-        <!-- Add more events here :) -->
-      </div>
-    </section>
-
-    <section id="contact" class="text_on_background">
-      <h2>Contact Me</h2>
-      <p>Email: sgpacheco5@gmail.com</p>
-    </section>
-
-    <script src="script.js"></script>
   </body>
 </html>
