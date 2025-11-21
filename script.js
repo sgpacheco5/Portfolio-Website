@@ -1,4 +1,3 @@
-// script.js
 // Theme Toggle
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
@@ -19,7 +18,7 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// Music Toggle - Fixed to actually play/pause audio
+// Music Toggle
 const musicToggle = document.getElementById("musicToggle");
 const bgMusic = document.getElementById("bgMusic");
 const musicOnIcon = document.getElementById("musicOnIcon");
