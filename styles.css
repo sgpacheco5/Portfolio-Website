@@ -1,4 +1,4 @@
-/* ===== DESIGN SYSTEM ===== */
+/* ---DESIGN SYSTEM--- */
 
 /* COLOR SCALES */
 :root {
@@ -138,7 +138,7 @@
   --gradient-end: #1e293b;
 }
 
-/* ===== BASE STYLES ===== */
+/* ---BASE STYLES--- */
 * {
   margin: 0;
   padding: 0;
@@ -157,7 +157,9 @@ body {
   );
   background-attachment: fixed;
   color: var(--text-primary);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 h1,
@@ -191,7 +193,7 @@ h6 {
   font-size: var(--text-lg);
 }
 
-/* ===== LAYOUT ===== */
+/*  LAYOUT  */
 .container {
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -218,7 +220,7 @@ h6 {
   width: 100%;
 }
 
-/* ===== NAVBAR ===== */
+/* ---NAVBAR --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -230,7 +232,7 @@ h6 {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
 }
 
 .navbar-left {
@@ -387,7 +389,7 @@ h6 {
   color: var(--text-primary);
 }
 
-/* ===== SIDEBAR ICONS ===== */
+/* ---SIDEBAR ICONS--- */
 .icon-button {
   width: 48px;
   height: 48px;
@@ -415,7 +417,7 @@ h6 {
   height: 24px;
 }
 
-/* ===== CONTENT SECTIONS ===== */
+/* ---CONTENT SECTIONS--- */
 .hero {
   padding: var(--space-4) 0;
 }
@@ -672,9 +674,26 @@ h6 {
   margin-bottom: var(--space-2);
 }
 
-.card p {
+.card p,
+.card ul {
   color: var(--text-secondary);
   line-height: var(--leading-relaxed);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+}
+
+.card ul {
+  padding-left: 1.25rem; /* keeps bullets aligned nicely */
+  margin-left: 0;
+}
+
+.card li {
+  margin-bottom: 0.5rem;
+}
+
+.card p:last-child,
+.card ul:last-child {
+  margin-bottom: 0;
 }
 
 /* ===== PROJECT LINKS ===== */
@@ -739,6 +758,25 @@ h6 {
   border-radius: 12px;
 }
 
+.project-image {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden; /* keeps rounded corners without affecting video view */
+  position: relative;
+  aspect-ratio: 16 / 9; /* ensures consistent container height */
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  overflow: hidden; /* keeps rounded corners without affecting video view */
+  position: relative;
+  aspect-ratio: 16 / 9; /* ensures consistent container height */
+}
+
 .image-section {
   display: flex;
   flex-direction: column;
@@ -762,7 +800,9 @@ h6 {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-image:hover {
@@ -1362,7 +1402,9 @@ h6 {
 /* Optional hover effect for polish */
 .project-media img:hover {
   transform: scale(1.02);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -1382,7 +1424,9 @@ h6 {
   font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .tag:hover {
@@ -1431,7 +1475,9 @@ h6 {
   background: var(--primary-900);
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   z-index: 9999;
   pointer-events: none;
 }
